@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th = "https://www.thymeleaf.org">
+<body>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Rang</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="hero: ${heroes}">
+        <td th:text="${hero.getName()}" />
+        <td th:text="${hero.getRang()}" />
+        <td>
+            <a th:href="@{/mist/{id}(id = ${hero.getId()})}">Show</a>
+            <a th:href="@{/mist/{id}/update(id = ${hero.getId()})}">Update</a>
+            <form th:method="DELETE" th:action="@{/mist/{id}(id = ${hero.getId()})}" th:object="${hero}">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+</table>
+<br>
+<a href="/mist/newHero">New Hero</a>
+</body>
+</html>

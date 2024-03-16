@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th = "https://www.thymeleaf.org">
+<body>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Rang</th>
+    </tr>
+    <tr>
+        <td th:text="${oneHero.getId()}" />
+        <td th:text="${oneHero.getName()}" />
+        <td th:text="${oneHero.getRang()}" />
+    </tr>
+</table>
+
+</body>
+</html>
